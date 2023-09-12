@@ -112,7 +112,7 @@ for i in range(3,50,6):
 > 39
 > 45
 
-此代码中3为起始值，50为终止值，6为步长。
+此代码中3为起始值，50为终止值，6为步长。前闭后开，即左边界可取到，右边界无法取到
 
 这个类的常见用法为：
 
@@ -145,7 +145,7 @@ class range(Sequence[int]):
 
 # 5.if __ name __ =  '__ main __'用法
 
-接下来的代码只能在本类中使用
+接下来的代码只能在本模块中使用，因为只有在本模块的名字才是__ main __
 
 # 6.cv2库   OpenCV库
 
@@ -257,6 +257,45 @@ print("nigle walter".title())
 
 判断字符串是否以参数开头或者结尾
 
+## 7.8转义字符
+
+如果不想让\起到转义字符串的作用，可以在字符串最前面加上字母r
+
+```python
+print("测\t试")
+print(r"测\t试")
+```
+
+## 7.9 find(str)函数
+
+查找子串所在位置,查找不到返回-1
+
+## 7.10 isdigit()函数
+
+判断字符串是否由数字组成
+
+## 7.11 isalnum()
+
+判断字符串是否由数字和字母组成
+
+## 7.12 strip()
+
+去除字符串左右两侧空格
+
+## 7.13格式化输出字符串
+
+```python
+a = 10
+b = 30.2
+print(f"{a}*{b}={a*b}")
+```
+
+结果：
+
+> 10*30.2=302.0
+
+
+
 # 8.命名要求
 
 ## 8.1PEP8对受保护的实例属性和私有实例属性的命名要求
@@ -279,3 +318,181 @@ print(3**4)
 
 > 81
 
+## 9.2除法
+
+除法是使用两个斜杠 //
+
+```python
+def is_primenumber(num):
+    # 素数不能为1
+    if num == 1:
+        return False
+    for i in range(2,num//2):#注意此处的除法
+        if num%i==0:
+            return False
+    return True
+
+print(is_primenumber(3))
+```
+
+# 10.函数
+
+## 10.1可变参数
+
+在参数名前面的*表示其是一个可变参数，可变参数args的类型为tuple
+
+```python
+def add(*args):
+    total = 0
+    for val in args:
+        total += val
+    return total
+
+print(add(3,6,9,2))
+```
+
+# 11.作用域
+
+## 11.1作用域关系
+
+python查找变量是，会按照“局部作用域”、“嵌套作用域”、“全局作用域”和“内置作用域”的顺序来查找。因此如果一个局部作用域与全局作用域同名，会优先使用局部作用域。内置作用域是指python内置的标识符，例如print int等
+
+## 11.2global关键字
+
+可以指示某个变量来自全局作用域
+
+## 11.3nolocal关键字
+
+可以指示某个变量来自嵌套作用域
+
+## 11.4全局变量
+
+全局变量要减少使用，因为1.作用域和影响过于广泛，可能会发生意料之外的修改和使用。2.生命周期更长，导致长时间无法被垃圾回收。3.降低代码之间的耦合度。
+
+## 11.5闭包
+
+# 12.列表list
+
+## 12.1求列表元素数量
+
+len()
+
+## 12.2遍历列表
+
+三种方式
+
+### 用下标遍历
+
+```python
+list1 = ['1',2,3.1]
+for index in range(len(list1)):
+    print(list1[index])
+```
+
+### 用元素遍历
+
+```python
+for item in list1:
+    print(item)
+```
+
+### 同时根据下标和元素遍历
+
+```python
+for index,item in enumerate(list1):
+    print(f"{index}:{item}")
+```
+
+## 12.3 删除指定位置元素
+
+pop(index)
+
+## 12.4切片
+
+### 反向切片
+
+```python
+print(f"反向切片：{list1[::-1]}")
+```
+
+结果：
+
+> 反向切片：[3.1, 2, '1']
+
+## 12.5 sorted与sort
+
+sorted不会修改原始列表，sort会修改原始列表
+
+```python
+list1 = ['orange', 'apple', 'zoo', 'internationalization', 'blueberry']
+list2 = sorted(list1)
+print(list1)#['orange', 'apple', 'zoo', 'internationalization', 'blueberry']
+print(list2)#['apple', 'blueberry', 'internationalization', 'orange', 'zoo']
+list1.sort()
+print(list1)#['apple', 'blueberry', 'internationalization', 'orange', 'zoo']
+```
+
+## 12.6生成式语法与生成器
+
+```python
+# 生成式语法
+f = [x for x in range(1,10)]
+print(f)
+print(sys.getsizeof(f))#占用内存更多，因为元素以及准备就绪
+# 生成器
+f = (x for x in range(1,10))
+print(f)
+print(sys.getsizeof(f))#占用内存较少  基本固定在64
+for item in  f:
+    print(item)
+```
+
+下面这个例子较难：
+
+```python
+# 生成式语法
+f = [x + y for x in 'ABCDE' for y in '1234567']
+print(f)
+print(sys.getsizeof(f))
+# 生成器
+f = (x + y for x in 'ABCDE' for y in '1234567')
+print(f)
+print(sys.getsizeof(f))
+for item in  f:
+    print(item)
+```
+
+
+
+# 13.系统相关
+
+## 13.1查看对象内存占用
+
+sys.getsizeof(f)   f为对象
+
+# 14.面向对象
+
+## 14.1私有属性与保护属性
+
+__ 开头的为私有属性，其他类无法访问。访问方法为在前面拼接下划线加类名
+
+```python
+class Test:
+    def __init__(self) -> None:
+        self.__foo = 'foo'
+    
+    def __bar(self):
+        print(self.__foo)
+
+def main():
+    test = Test()
+    print(test.__foo)#无法获取foo
+    print(test._Test__foo)#前面拼接下划线加类名后，即可实现获取该属性名
+    test.__bar()
+    test._Test__bar()
+
+if __name__ == '__main__':
+    main()
+```
+
+_ 开头的为受保护属性，其他类可以访问，起到了一个提醒的效果
