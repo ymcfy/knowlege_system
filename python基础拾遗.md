@@ -299,7 +299,7 @@ print(f"{a}*{b}={a*b}")
 
 ## 7.14字符串不可修改
 
-![image-20240304193206152](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240304193206152.png)
+![image-20240304193206152](python基础拾遗.assets/image-20240304193206152.png)
 
 ## 7.15查找字符串某段字符的起始位置
 
@@ -683,7 +683,7 @@ _ 开头的为受保护属性，其他类可以访问，起到了一个提醒的
 
 当创建的元组中只有一个元素时，注意要加一个逗号
 
-![image-20240304192348351](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240304192348351.png)
+![image-20240304192348351](python基础拾遗.assets/image-20240304192348351.png)
 
 ## 15.3元组查询某个元素的下标
 
@@ -703,7 +703,7 @@ len(mytuple)
 
 缓存目录如下：
 
-![image-20231012163920168](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231012163920168.png)
+![image-20231012163920168](python基础拾遗.assets/image-20231012163920168.png)
 
 当删除缓存后，所有配置都重置，基本就能解决问题
 
@@ -799,7 +799,7 @@ self.legend = self.axes.legend(self.handles, self.labels)
 
 # 20.python版本
 
-![image-20231115164801195](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231115164801195-1700038081699-1.png)
+![image-20231115164801195](python基础拾遗.assets/image-20231115164801195-1700038081699-1.png)
 
 # 21.判断某个关键字参数是否在kwargs里
 
@@ -817,7 +817,7 @@ random.random(100)#获取100个0-1之间的随机数
 
 # 23.vscode切换python编辑器
 
-![image-20231215195937704](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231215195937704.png)
+![image-20231215195937704](python基础拾遗.assets/image-20231215195937704.png)
 
 # 24.for i循环
 
@@ -873,7 +873,7 @@ def syslab_loads(str, ignore=True, **kwds):
 
 使用pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ PyQt5==5.15.2安装pyqt5时，遇到下列问题
 
-![image-20231227090456203](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231227090456203.png)
+![image-20231227090456203](python基础拾遗.assets/image-20231227090456203.png)
 
 原因是需要用到需要用到 `Microsoft C++ Build Tools`，通过在powershell运行下列代码从微软下载c++生成工具并启动
 
@@ -883,11 +883,11 @@ wget https://aka.ms/vs/17/release/vs_BuildTools.exe -o vs_BuildTools.exe ; cmd /
 
 安装时，c++/cli选项一段要选择
 
-![image-20231227091330710](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231227091330710.png)
+![image-20231227091330710](python基础拾遗.assets/image-20231227091330710.png)
 
 安装成功之后，再次安装pyqt5，安装成功
 
-![image-20231227091045111](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20231227091045111.png)
+![image-20231227091045111](python基础拾遗.assets/image-20231227091045111.png)
 
 参考链接：[安装Pyqt5报错：ERROR: Failed building wheel for PyQt5-sip-CSDN博客](https://blog.csdn.net/no1xium/article/details/126764041)
 
@@ -997,9 +997,9 @@ pip install 库路径
 pip install .
 ```
 
-![image-20240229192654890](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240229192654890.png)
+![image-20240229192654890](python基础拾遗.assets/image-20240229192654890.png)
 
-![image-20240229192705183](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240229192705183.png)
+![image-20240229192705183](python基础拾遗.assets/image-20240229192705183.png)
 
 # 33.用切片方式完成序列反转
 
@@ -1010,7 +1010,7 @@ print(new_str)
 
 ```
 
-![image-20240305193254079](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240305193254079.png)
+![image-20240305193254079](python基础拾遗.assets/image-20240305193254079.png)
 
 # 34.集合（set）
 
@@ -1067,7 +1067,7 @@ print("set5",set5) #set5 {1, 2, 3, 5, 6}
 
 dict.pop(key)
 
-![image-20240311193446250](D:\t_Knowlege\knowlege_system\python基础拾遗.assets\image-20240311193446250.png)
+![image-20240311193446250](python基础拾遗.assets/image-20240311193446250.png)
 
 # 36文件处理
 
@@ -1101,3 +1101,168 @@ as f是将open("myfile.txt",'a')返回的文件对象赋值给变量f
 - "x" 创建模式，如果文件已存在，会报错
 - "b" 二进制模式，可以与其他模式结合使用，如rb wb ab用于读取、写入、追加二进制文件
 - "t" 文本模式，可以与其他模式结合使用，如rt wt at用于读取、写入、追加文本文件
+
+# 37获取当前时间是几时几分几秒
+
+```python
+from datetime import datetime
+
+# 获取当前时间
+now = datetime.now()
+
+# 打印当前时间的小时，分钟和秒
+print("当前时间是：{}时{}分{}秒".format(now.hour, now.minute, now.second))
+```
+
+![image-20240607142109686](python基础拾遗.assets/image-20240607142109686.png)
+
+# 38 a/b和a//b的区别
+
+![image-20240607144057270](python基础拾遗.assets/image-20240607144057270.png)
+
+# 39 python如何导入txt文件内的数据
+
+在Python中，我们可以使用内置的`open()`函数或者`pandas`库的`read_csv()`函数来导入txt文件的数据。
+
+下面是一个使用`open()`函数的例子：
+
+```python
+# 打开文件
+with open('data.txt', 'r') as file:
+    # 读取文件的所有内容
+    data = file.read()
+
+print(data)
+```
+
+这段代码会打开名为"data.txt"的文件，然后读取它的所有内容，并存储在变量`data`中。
+
+如果你的txt文件是一个表格数据，比如数据之间用逗号或者制表符分隔，那么你可以使用`pandas`库的`read_csv()`函数来导入数据，这个函数可以将数据导入为一个DataFrame对象，这样就可以方便地进行数据分析。以下是一个例子：
+
+```python
+import pandas as pd
+
+# 读取txt文件的数据
+df = pd.read_csv('data.txt', sep='\t')
+
+print(df)
+```
+
+这段代码会读取名为"data.txt"的文件，假设数据之间是用制表符('\t')分隔的，然后将数据导入为一个DataFrame对象。
+
+注意，你需要先安装pandas库，安装命令是`pip install pandas`。
+
+# 40 python求解标准差、平方根
+
+在 Python 中，你可以使用 sqrt 函数来计算平方根，使用 std 函数来计算标准差。这些函数都可以在 NumPy 或者 math 模块中找到
+
+在Python中，我们可以使用内置的math库和numpy库来求解标准差和平方根。
+
+1. 求解标准差：可以使用numpy的std()函数。以下是一个例子：
+
+```python
+import numpy as np
+
+# 创建一个数据列表
+data = [1, 2, 3, 4, 5]
+
+# 计算标准差
+std_dev = np.std(data)
+
+print("标准差是：", std_dev)
+```
+
+1. 求解平方根：可以使用math的sqrt()函数。以下是一个例子：
+
+```python
+import math
+
+# 定义一个数
+num = 9
+
+# 计算平方根
+sqrt_num = math.sqrt(num)
+
+print("平方根是：", sqrt_num)
+```
+
+这个代码会计算数字9的平方根。注意，math.sqrt()只接受非负数作为输入。如果你尝试输入负数，它会抛出一个错误。
+
+# 41 python的“@property”和"@<属性名>.setter"
+
+在Python中，`@property`是一个内置的装饰器，主要用于将一个方法转换为属性，使其可以像访问属性那样访问该方法。
+
+一般情况下，我们可以通过`@property`装饰器将一个`getter`方法转换为同名属性，然后可以通过`@<属性名>.setter`装饰器来定义对应的`setter`方法。这样，我们就可以像访问属性那样来获取和修改数据，而不需要像调用方法那样加上括号。
+
+以下是一个例子：
+
+```python
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+p = Person('Tom')
+print(p.name)  # 输出: Tom
+p.name = 'Jerry'
+print(p.name)  # 输出: Jerry
+```
+
+在这个例子中，`name`是一个属性，我们可以通过`p.name`来获取它的值，也可以通过`p.name = 'Jerry'`来修改它的值。实际上，当我们访问`p.name`时，Python会调用`Person`类的`name`方法来获取`_name`的值，当我们修改`p.name`时，Python会调用`Person`类的`name`方法来修改`_name`的值。
+
+总的来说，`@property`装饰器可以帮助我们更好地封装数据，使我们的代码更加简洁，易于理解和维护。
+
+# 42 python如何实现四舍五入
+
+在Python中，我们可以使用内置的`round()`函数来实现四舍五入。以下是一个例子：
+
+```python
+# 定义一个浮点数
+num = 3.14159
+
+# 对num进行四舍五入，保留2位小数
+rounded_num = round(num, 2)
+
+print("四舍五入后的结果是：", rounded_num)
+```
+
+这段代码会输出"四舍五入后的结果是：3.14。
+
+`round()`函数接受两个参数：第一个参数是需要进行四舍五入的数，第二个参数是小数点后需要保留的位数。如果省略第二个参数，`round()`函数会返回最接近输入值的整数。
+
+# 43 python如何修改数组形状，例如从(500,1)修改为(500,)
+
+在Python中，我们可以使用numpy库的reshape()函数来修改数组的形状。
+
+以下是一个例子：
+
+```python
+import numpy as np
+
+# 创建一个形状为(500, 1)的数组
+arr = np.zeros((500, 1))
+
+print("修改前的形状：", arr.shape)
+
+# 使用reshape()函数修改数组的形状
+arr = arr.reshape(500)
+
+print("修改后的形状：", arr.shape)
+```
+
+这段代码首先创建了一个形状为(500, 1)的数组，然后使用reshape()函数将其形状修改为(500,)。
+
+另外，你也可以使用numpy的ravel()或flatten()函数来将多维数组转换为一维数组。例如：
+
+```python
+arr = arr.ravel()  # 或者 arr = arr.flatten()
+```
+
+这两个方法都可以达到同样的效果，将多维数组降为一维。

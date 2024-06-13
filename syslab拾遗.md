@@ -26,7 +26,9 @@
 
 - 安装.whl文件
 
-![image-20240425101047615](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240425101047615.png)
+![image-20240425101047615](syslab拾遗.assets/image-20240425101047615.png)
+
+
 
 # 3.在linux的syslab online设置环境变量
 
@@ -60,7 +62,7 @@ importdata("data.txt","-ascii")
 
 然后将hasLicense变量改为false即可
 
-![image-20240229193150697](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240229193150697.png)
+![image-20240229193150697](syslab拾遗.assets/image-20240229193150697.png)
 
 # 7.syslab online更新插件步骤
 
@@ -68,7 +70,7 @@ importdata("data.txt","-ascii")
 
 - 从VSIX安装，例如：
 
-![image-20240229193352838](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240229193352838.png)
+![image-20240229193352838](syslab拾遗.assets/image-20240229193352838.png)
 
 # 8.syslab 配置centos版本的syslab
 
@@ -76,7 +78,7 @@ importdata("data.txt","-ascii")
 
 下载链接：[syslab / syslab · GitLab (tongyuan.cc)](https://git.tongyuan.cc/syslab/syslab)
 
-​	![image-20240229193817374](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240229193817374.png)
+​	![image-20240229193817374](syslab拾遗.assets/image-20240229193817374.png)
 
 下载如图所示两处均可，其中CentOS7.9集群版更新，不过需要预编译，安装时间久
 
@@ -84,7 +86,7 @@ importdata("data.txt","-ascii")
 
 ## 3.卸载已有syslab
 
-![image-20240229194356734](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240229194356734.png)
+![image-20240229194356734](syslab拾遗.assets/image-20240229194356734.png)
 
 或者直接覆盖安装
 
@@ -95,7 +97,7 @@ chmod +x XXX.run
 sudo ./XXX.run -p 安装路径
 ```
 
-![image-20240229194924389](D:\t_Knowlege\knowlege_system\syslab拾遗.assets\image-20240229194924389.png)
+![image-20240229194924389](syslab拾遗.assets/image-20240229194924389.png)
 
 # 9.Syslab Online打包插件
 

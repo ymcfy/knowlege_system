@@ -10,7 +10,7 @@
 QMessageBox.information(self,'标题','消息对话框正文',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes)
 ```
 
-![image-20240226195241973](D:\t_Knowlege\knowlege_system\PyQt拾遗.assets\image-20240226195241973.png)
+![image-20240226195241973](PyQt拾遗.assets/image-20240226195241973.png)
 
 ## 提问对话框
 
@@ -18,7 +18,7 @@ QMessageBox.information(self,'标题','消息对话框正文',QMessageBox.Yes|QM
 QMessageBox.question(self,'标题','提问框消息正文',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes)
 ```
 
-![image-20240226195331505](D:\t_Knowlege\knowlege_system\PyQt拾遗.assets\image-20240226195331505.png)
+![image-20240226195331505](PyQt拾遗.assets/image-20240226195331505.png)
 
 ## 警告对话框
 
@@ -26,7 +26,7 @@ QMessageBox.question(self,'标题','提问框消息正文',QMessageBox.Yes|QMess
 QMessageBox.warning(self,'标题','警告框消息正文',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes)
 ```
 
-![image-20240226195401623](D:\t_Knowlege\knowlege_system\PyQt拾遗.assets\image-20240226195401623.png)
+![image-20240226195401623](PyQt拾遗.assets/image-20240226195401623.png)
 
 ## 严重错误对话框
 
@@ -34,7 +34,7 @@ QMessageBox.warning(self,'标题','警告框消息正文',QMessageBox.Yes|QMessa
 QMessageBox.critical(self,'标题','严重错误对话框消息正文',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes)
 ```
 
-![image-20240226195438632](D:\t_Knowlege\knowlege_system\PyQt拾遗.assets\image-20240226195438632.png)
+![image-20240226195438632](PyQt拾遗.assets/image-20240226195438632.png)
 
 ## 关于对话框
 
@@ -42,7 +42,7 @@ QMessageBox.critical(self,'标题','严重错误对话框消息正文',QMessageB
 QMessageBox.about(self,'标题','关于对话框'
 ```
 
-![image-20240226195506340](D:\t_Knowlege\knowlege_system\PyQt拾遗.assets\image-20240226195506340.png)
+![image-20240226195506340](PyQt拾遗.assets/image-20240226195506340.png)
 
 参考链接：[PyQt5基本控件详解之QMessageBox(十三)-CSDN博客](https://blog.csdn.net/jia666666/article/details/81540785)
 

@@ -39,7 +39,7 @@ dlmwrite('data.txt',data)
 open 函数名
 ```
 
-![image-20240229192426212](D:\t_Knowlege\knowlege_system\MATLAB拾遗.assets\image-20240229192426212.png)
+![image-20240229192426212](MATLAB拾遗.assets/image-20240229192426212.png)
 
 另外可以用everything搜索函数.m
 

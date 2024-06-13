@@ -38,7 +38,7 @@ const a = 1
 
 起到扩位的作用，提供了任意精度的整数和浮点数
 
-![image-20231114193037147](D:\t_Knowlege\knowlege_system\Julia拾遗.assets\image-20231114193037147.png)
+![image-20231114193037147](Julia拾遗.assets/image-20231114193037147.png)
 
 # 5.Julia代码耗时统计
 
@@ -257,3 +257,16 @@ min_val = minimum(arr) # 输出：2
 - [minimum(A,dims) - Julia Functions](https://www.jlhub.com/julia/manual/en/function/minimum)
 - [Getting minimum elements in Julia - GeeksforGeeks](https://www.geeksforgeeks.org/getting-minimum-elements-in-julia-minimum-and-minimum-methods/)
 - [min - Julia Functions](https://www.jlhub.com/julia/manual/en/function/min)
+
+# 19.Julia生成1行n列的二维数组，其中每一列都是一个不同大小的二维矩阵
+
+具体描述：在Julia编程语言中创建一个嵌套的二维数组（或者说矩阵），其中每个元素都是一个不同维度的二维矩阵。具体来说，你想要的最终结构是一个一行多列的二维数组，其中每一列都是一个不同大小（例如 521x2，54x2，44x2）的二维矩阵。
+
+```julia
+vertsout = []
+push!(vertsout, [flipud(vo[2]); vo[1][2:end, :]])#此行代码放在循环等结构中，生成521x2、54x2的矩阵，并放进vertsout数组中
+vertsout = reshape(vertsout, 1, length(vertsout))#将vertsout数组由n行1列的结构，转为1行n列的结构
+```
+
+![image-20240514142540098](Julia拾遗.assets/image-20240514142540098.png)
+

@@ -208,6 +208,14 @@ https://blog.csdn.net/weixin_54227557/article/details/134233802
 rm /path/to/your/file_1.txt
 ```
 
+## 删除某个文件夹
+
+```bash
+rm -rf 目录
+```
+
+-r表示递归删除，f表示强制删除，无需询问
+
 # 11.linux解压安装包
 
 ```bash

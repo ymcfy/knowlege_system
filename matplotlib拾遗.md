@@ -62,13 +62,13 @@ def disconnect(self):
 
 下图中绿色线条为start、end、inner，紫色线条为polar
 
-![image-20231012111015405](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231012111015405.png)
+![image-20231012111015405](matplotlib拾遗.assets/image-20231012111015405.png)
 
 # 6.查看当前版本
 
 查看当前matplotlib版本的方法为：
 
-![image-20231115092114120](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231115092114120.png)
+![image-20231115092114120](matplotlib拾遗.assets/image-20231115092114120.png)
 
 # 7.绘制三维曲线
 
@@ -118,7 +118,7 @@ cfig_origin.axs[0].ax.add_artist(cfig.axs[0].lines[0].line)
 
 这两种方法均会报下列错误：
 
-![image-20231127165821775](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231127165821775.png)
+![image-20231127165821775](matplotlib拾遗.assets/image-20231127165821775.png)
 
 在[关于python：在matplotlib中的单独图中绘制子图轴 | 码农家园 (codenong.com)](https://www.codenong.com/44780452/)里提到了类似问题，没有提到原因，但是提到可以采用提取数据进行绘制的方式解决类似问题。
 
@@ -144,9 +144,9 @@ cfig_origin.axs[0].ax.add_artist(cfig.axs[0].lines[0].line)
 
 推断add_line方法不起作用的原因是添加的line中包含ax属性和fig属性，源码对这两个属性进行判断，发现如果这两个属性不为None，那么就抛出错误：can not re-use an artist in more than an axes。
 
-![image-20231201152857270](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231201152857270.png)
+![image-20231201152857270](matplotlib拾遗.assets/image-20231201152857270.png)
 
-![image-20231201152936728](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231201152936728.png)
+![image-20231201152936728](matplotlib拾遗.assets/image-20231201152936728.png)
 
 那么从这个思路出发，可以将line中的ax属性和fig属性设置为None。
 
@@ -157,9 +157,9 @@ c_line.line.__dict__['figure'] = None
 
 在设置为None之后，发现可以顺利添加，但是发现，添加进来的曲线无限长，那么说明其转换坐标系出现问题，那么就需要再考虑对转换坐标系做处理。在设置transform前有一个判断，is_transform_set，其本质是判断_transformSet属性。因此需要再对_transformSet属性做处理
 
-![image-20231201153750025](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231201153750025.png)
+![image-20231201153750025](matplotlib拾遗.assets/image-20231201153750025.png)
 
-![image-20231201153840984](D:\t_Knowlege\knowlege_system\matplotlib拾遗.assets\image-20231201153840984.png)
+![image-20231201153840984](matplotlib拾遗.assets/image-20231201153840984.png)
 
 ```python
 c_line.line.__dict__['_axes'] = None
@@ -229,3 +229,60 @@ print(plt.colormaps())
 2. [How to view all colormaps available in matplotlib?](https://stackoverflow.com/questions/34314356/how-to-view-all-colormaps-available-in-matplotlib)
 3. [Cmap in Python: Tutorials & Examples | Colormaps in Matplotlib](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
 4. [Colormap reference — Matplotlib 3.8.4 documentation](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
+
+# 18.matplotlib根据FigureManagerQT，获取对应的figure的方法
+
+在Matplotlib中，如果你想从`FigureManagerQT`获取对应的`figure`对象，你可以通过`FigureManager`的`canvas.figure`属性来获取。`FigureManager`是一个容器，它包含了实际的后端窗口，这个窗口在屏幕上显示`figure`。`canvas`就是这个后端窗口，而`canvas.figure`就是在这个窗口上显示的`figure`对象。
+
+以下是一个简单的代码示例：
+
+```python
+import matplotlib.pyplot as plt
+
+# 创建一个新的figure
+fig = plt.figure()
+
+# 获取当前的figure manager
+manager = plt.get_current_fig_manager()
+
+# 从figure manager获取figure
+fig_from_manager = manager.canvas.figure
+
+# 检查这两个figure是否是同一个
+print(fig is fig_from_manager)  # 应该打印True
+```
+
+这段代码首先创建了一个新的`figure`，然后获取了当前的`figure manager`。然后，它从`figure manager`中获取了`figure`，并检查了这个`figure`是否与最初创建的`figure`是同一个对象。
+
+# 19.matplotlib只计算非隐藏的曲线，并进行坐标轴范围自动缩放
+
+重点是采用ax.relim(visible_only=True)这行代码，里面visible_only参数的传递
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 创建数据
+x = np.linspace(0, 2 * np.pi, 100)
+y1 = np.sin(x) + 3
+y2 = np.cos(x)
+
+# 绘制两条曲线
+line1, = plt.plot(x, y1, label='sin(x)') 
+line2, = plt.plot(x, y2, label='cos(x)')
+
+# 获取当前的axes
+ax = plt.gca()
+
+# 隐藏第一条曲线
+line1.set_visible(False)
+
+# 重新计算可见的曲线的数据范围，并自动调整坐标轴范围
+ax.relim(visible_only=True)
+ax.autoscale_view()
+
+# 显示图像
+plt.show()
+
+```
+

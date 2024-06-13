@@ -18,16 +18,16 @@
 
 先不加题注，选中需并列图片
 
-![image-20230927101234148](D:\t_Knowlege\knowlege_system\Office拾遗.assets\image-20230927101234148.png)
+![image-20230927101234148](Office拾遗.assets/image-20230927101234148.png)
 
 点击【表格】-【将文本转换成表格】
 
-![image-20230927101252308](D:\t_Knowlege\knowlege_system\Office拾遗.assets\image-20230927101252308.png)
+![image-20230927101252308](Office拾遗.assets/image-20230927101252308.png)
 
-![image-20230927101312270](D:\t_Knowlege\knowlege_system\Office拾遗.assets\image-20230927101312270.png)
+![image-20230927101312270](Office拾遗.assets/image-20230927101312270.png)
 
-![image-20230927101327245](D:\t_Knowlege\knowlege_system\Office拾遗.assets\image-20230927101327245.png)
+![image-20230927101327245](Office拾遗.assets/image-20230927101327245.png)
 
 之后再添加题注，将底纹设为空白，将边框设为无边线
 
-![image-20230927101422046](D:\t_Knowlege\knowlege_system\Office拾遗.assets\image-20230927101422046.png)
+![image-20230927101422046](Office拾遗.assets/image-20230927101422046.png)
